@@ -1,8 +1,7 @@
 ---
 layout: default
-title: flet
-permalink: /py/flet
-parent: pakckages
+title: packages
+permalink: /py/pkg
 has_children: true
 has_toc: true
 ---
