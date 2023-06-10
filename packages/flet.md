@@ -2,7 +2,7 @@
 layout: default
 title: flet
 permalink: /py/flet
-parent: pakckages
+parent: packages
 has_children: true
 has_toc: true
 ---
