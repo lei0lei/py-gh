@@ -1,6 +1,6 @@
 ---
 layout: default
-title: fletinput
+title: fletcontrolref
 permalink: /py/flet/get-user-input
 parent: flet
 grand_parent: packages
