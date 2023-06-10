@@ -14,3 +14,5 @@ has_toc: true
 1. TOC
 {:toc}
 </details>
+
+Gallery: https://flet-controls-gallery.fly.dev/layout
