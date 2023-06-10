@@ -1,6 +1,6 @@
 ---
 layout: default
-title: fletlists
+title: lists
 permalink: /py/flet/lists
 parent: flet
 grand_parent: packages

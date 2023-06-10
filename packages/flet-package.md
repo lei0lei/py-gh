@@ -1,6 +1,6 @@
 ---
 layout: default
-title: fletpackage
+title: package
 permalink: /py/flet/package
 parent: flet
 grand_parent: packages

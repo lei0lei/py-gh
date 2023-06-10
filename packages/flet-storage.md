@@ -1,6 +1,6 @@
 ---
 layout: default
-title: fletstorage
+title: storage
 permalink: /py/flet/storage
 parent: flet
 grand_parent: packages
