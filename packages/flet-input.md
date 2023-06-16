@@ -79,7 +79,7 @@ ft.app(target=main)
 
 # Checkbox
 
-checkbo TODO：
+checkbox TODO：
 ```python
 import flet as ft
 
