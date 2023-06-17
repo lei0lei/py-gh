@@ -1,0 +1,8 @@
+
+(ibus-daemon:2335): GLib-WARNING **: 10:26:03.520: GChildWatchSource: Exit status of a child process was requested but ECHILD was received by waitpid(). See the documentation of g_child_watch_source_new() for possible causes.
+
+(ibus-daemon:2335): GLib-WARNING **: 10:26:03.520: GChildWatchSource: Exit status of a child process was requested but ECHILD was received by waitpid(). See the documentation of g_child_watch_source_new() for possible causes.
+
+(ibus-daemon:2335): GLib-WARNING **: 10:26:03.520: GChildWatchSource: Exit status of a child process was requested but ECHILD was received by waitpid(). See the documentation of g_child_watch_source_new() for possible causes.
+
+(ibus-daemon:2335): GLib-WARNING **: 10:26:03.520: GChildWatchSource: Exit status of a child process was requested but ECHILD was received by waitpid(). See the documentation of g_child_watch_source_new() for possible causes.
