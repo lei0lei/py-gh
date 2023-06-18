@@ -282,3 +282,49 @@ if __name__ == "__main__":
     elapsed = time.perf_counter() - start
     print(f"Program completed in {elapsed:0.5f} seconds.")
 ```
+
+The first few coroutines are helper functions that return a random string, a fractional-second performance counter, and a random integer. A producer puts anywhere from 1 to 5 items into the queue. Each item is a tuple of (i, t) where i is a random string and t is the time at which the producer attempts to put the tuple into the queue.
+
+When a consumer pulls an item out, it simply calculates the elapsed time that the item sat in the queue using the timestamp that the item was put in with.
+
+Keep in mind that asyncio.sleep() is used to mimic some other, more complex coroutine that would eat up time and block all other execution if it were a regular blocking function.
+
+Here is a test run with two producers and five consumers:
+
+```
+$ python3 asyncq.py -p 2 -c 5
+Producer 0 sleeping for 3 seconds.
+Producer 1 sleeping for 3 seconds.
+Consumer 0 sleeping for 4 seconds.
+Consumer 1 sleeping for 3 seconds.
+Consumer 2 sleeping for 3 seconds.
+Consumer 3 sleeping for 5 seconds.
+Consumer 4 sleeping for 4 seconds.
+Producer 0 added <377b1e8f82> to queue.
+Producer 0 sleeping for 5 seconds.
+Producer 1 added <413b8802f8> to queue.
+Consumer 1 got element <377b1e8f82> in 0.00013 seconds.
+Consumer 1 sleeping for 3 seconds.
+Consumer 2 got element <413b8802f8> in 0.00009 seconds.
+Consumer 2 sleeping for 4 seconds.
+Producer 0 added <06c055b3ab> to queue.
+Producer 0 sleeping for 1 seconds.
+Consumer 0 got element <06c055b3ab> in 0.00021 seconds.
+Consumer 0 sleeping for 4 seconds.
+Producer 0 added <17a8613276> to queue.
+Consumer 4 got element <17a8613276> in 0.00022 seconds.
+Consumer 4 sleeping for 5 seconds.
+Program completed in 9.00954 seconds.
+```
+
+In this case, the items process in fractions of a second. A delay can be due to two reasons:
+
+Standard, largely unavoidable overhead
+Situations where all consumers are sleeping when an item appears in the queue
+With regards to the second reason, luckily, it is perfectly normal to scale to hundreds or thousands of consumers. You should have no problem with python3 asyncq.py -p 5 -c 100. The point here is that, theoretically, you could have different users on different systems controlling the management of producers and consumers, with the queue serving as the central throughput.
+
+So far, you’ve been thrown right into the fire and seen three related examples of asyncio calling coroutines defined with async and await. If you’re not completely following or just want to get deeper into the mechanics of how modern coroutines came to be in Python, you’ll start from square one with the next section.
+
+
+
+
